@@ -1,49 +1,324 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout title="Torbay Garden Club" description="A community of gardeners in Torbay, Auckland, cultivating knowledge, friendship, and beautiful gardens since 1953.">
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+  <!-- ── 1. HERO ── -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1800&q=80')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="eyebrow hero-eyebrow">Torbay Garden Club — Est. 1953</span>
+      <h1 class="hero-heading">
+        The Kauri<br/>
+        <em>Stands Still.</em>
+      </h1>
+      <p class="hero-body">Like the ancient kauri weathering another winter, we endure, gather, and grow — a community rooted deep in Torbay's soil.</p>
+      <div class="hero-buttons">
+        <a href="/join" class="btn-primary">Plant Your Roots</a>
+        <a href="/events" class="btn-outline btn-outline-light">Upcoming Events</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ── 2. WELCOME ── -->
+  <section class="welcome">
+    <div class="container welcome-inner">
+      <div class="welcome-text">
+        <span class="eyebrow">Welcome</span>
+        <h2 class="heading-display">
+          Growing Together<br/>
+          <em>Since 1953</em>
+        </h2>
+        <p>We are a garden club in Torbay, Auckland. We aim to promote and share interests in gardening, to educate in all aspects of horticulture and to provide fellowship by meeting like-minded people.</p>
+        <p>We meet on the first Wednesday of the month, except January, February and July, in the Torbay Community Hall at 1.00pm. At each of these meetings we also have a club show where members exhibit flowers, shrubs and fruit &amp; vegetables from their gardens.</p>
+        <p>Visitors are most welcome and if you decide you would like to join, there is an annual membership fee of $30 for individuals, or $35 for couples.</p>
+        <a href="/about" class="link-arrow">Discover our story →</a>
+      </div>
+      <div class="welcome-image">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Hands holding rich garden soil" />
+        <div class="welcome-caption">
+          <span>Est. 1953</span>
+          <span>Torbay, Auckland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. EVENTS TIMELINE ── -->
+  <section class="events-section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">The Living Calendar</span>
+          <h2 class="heading-display">What's <em>Growing</em></h2>
+        </div>
+        <a href="/events" class="link-arrow">All events →</a>
+      </div>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot dot-filled"></div>
+          <div class="timeline-card">
+            <span class="event-tag tag-public">Public Event</span>
+            <h3>Spring Show 2025</h3>
+            <p>Open to the public. Exhibits, raffle, trading table, and children's section.</p>
+            <div class="event-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 6 September 2025</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 12:30pm — 3:00pm</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Torbay Community Hall</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot dot-empty"></div>
+          <div class="timeline-card">
+            <span class="event-tag tag-members">Members</span>
+            <h3>Rose Show 2025</h3>
+            <p>Club members showcase their favourite roses. Members, friends &amp; family.</p>
+            <div class="event-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 5 November 2025</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 1:00pm — 2:00pm</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Torbay Community Hall</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot dot-empty"></div>
+          <div class="timeline-card">
+            <span class="event-tag tag-monthly">Monthly</span>
+            <h3>Monthly Meeting</h3>
+            <p>Regular club meeting with guest speakers, show, and trading table.</p>
+            <div class="event-meta">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> First Wednesday of each month</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 1:00pm</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg> Torbay Community Hall</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. GALLERY PREVIEW ── -->
+  <section class="gallery-preview">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <span class="eyebrow">Through the Seasons</span>
+          <h2 class="heading-display">From Our <em>Garden</em></h2>
+        </div>
+        <a href="/gallery" class="link-arrow">View gallery →</a>
+      </div>
+      <div class="gallery-mosaic">
+        <a href="/gallery" class="mosaic-large mosaic-item">
+          <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc3f?w=900&q=80" alt="Rose Show" />
+          <div class="mosaic-label">Rose Show</div>
+        </a>
+        <a href="/gallery" class="mosaic-item">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Native Bush" />
+          <div class="mosaic-label">Native Bush</div>
+        </a>
+        <a href="/gallery" class="mosaic-item">
+          <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Spring Planting" />
+          <div class="mosaic-label">Spring Planting</div>
+        </a>
+        <a href="/gallery" class="mosaic-item">
+          <img src="https://images.unsplash.com/photo-1487530811015-780fcd2d9f5e?w=600&q=80" alt="Monthly Meeting" />
+          <div class="mosaic-label">Monthly Meeting</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. MEMBERSHIP BANNER ── -->
+  <section class="membership-banner">
+    <div class="membership-bg" style="background-image: url('/membership-bg.jpg')"></div>
+    <div class="membership-overlay"></div>
+    <div class="membership-content">
+      <div class="membership-divider"></div>
+      <span class="eyebrow membership-eyebrow">Membership</span>
+      <h2 class="heading-display membership-heading">
+        Plant Your Roots<br/>
+        <em>in the Community</em>
+      </h2>
+      <p>Join a fellowship of gardeners who have been cultivating knowledge, friendship, and beautiful gardens in Torbay for over 70 years. Individuals $30 / Couples $35 per year.</p>
+      <a href="/join" class="btn-primary">Become a Member</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 900px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--cream-dark);
+  margin-top: -64px;
+  padding-top: 64px;
+}.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.95) saturate(0.7);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(242,237,228,0.75) 40%, rgba(242,237,228,0.1) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 30vh 2rem 0 calc((100vw - 1200px) / 2 + 2rem);
+  margin-top: 64px;
+}
+.hero-eyebrow { color: var(--olive); }
+.hero-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 1.2rem;
+}
+.hero-heading em {
+  font-style: italic;
+  color: var(--crimson);
+  font-weight: 400;
+}
+.hero-body {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 420px;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-outline-light { border-color: var(--charcoal); }
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--charcoal);
+  opacity: 0.4;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+.welcome { padding: var(--section-pad); background: var(--cream); }
+.welcome-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.welcome-text { display: flex; flex-direction: column; gap: 1rem; }
+.welcome-text p { font-size: 0.95rem; color: var(--text-muted); }
+.welcome-image { position: relative; }
+.welcome-image img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.welcome-caption {
+  position: absolute;
+  bottom: -1px; left: 0;
+  background: rgba(242,237,228,0.95);
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.events-section { padding: var(--section-pad); background: var(--cream); }
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+.timeline { position: relative; padding-left: 2.5rem; }
+.timeline-line { position: absolute; left: 0.5rem; top: 0.5rem; bottom: 0.5rem; width: 1px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 1.5rem; }
+.timeline-dot { position: absolute; left: -2rem; top: 1.5rem; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--crimson); }
+.dot-filled { background: var(--crimson); }
+.dot-empty { background: var(--cream); }
+.timeline-card { background: var(--white); border: 1px solid var(--border); padding: 1.5rem 2rem; }
+.timeline-card h3 { font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600; margin: 0.5rem 0; }
+.timeline-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+.event-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 2px; }
+.tag-public { background: #fce8ed; color: var(--crimson); }
+.tag-members { background: var(--cream-dark); color: var(--text-muted); }
+.tag-monthly { background: var(--cream-dark); color: var(--text-muted); }
+.event-meta { display: flex; flex-wrap: wrap; gap: 1.2rem; font-size: 0.82rem; color: var(--text-muted); }
+.event-meta span { display: flex; align-items: center; gap: 0.4rem; }
+.gallery-preview { padding: var(--section-pad); background: var(--cream); }
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.75rem;
+}
+.mosaic-item { position: relative; overflow: hidden; display: block; }
+.mosaic-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.mosaic-item:hover img { transform: scale(1.03); }
+.mosaic-large { grid-row: span 2; min-height: 500px; }
+.mosaic-item:not(.mosaic-large) { min-height: 240px; }
+.mosaic-label {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(to top, rgba(30,30,30,0.65), transparent);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.mosaic-item:hover .mosaic-label { opacity: 1; }
+.membership-banner { position: relative; padding: 7rem 2rem; text-align: center; overflow: hidden; }
+.membership-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.9) saturate(0.8); }
+.membership-overlay { position: absolute; inset: 0; background: rgba(242,237,228,0.82); }
+.membership-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.membership-divider { width: 1px; height: 60px; background: var(--border); margin-bottom: 0.5rem; }
+.membership-eyebrow { color: var(--olive); }
+.membership-heading { text-align: center; }
+.membership-content p { font-size: 0.95rem; color: var(--text-muted); text-align: center; line-height: 1.7; }
+@media (max-width: 900px) {
+  .welcome-inner { grid-template-columns: 1fr; }
+  .gallery-mosaic { grid-template-columns: 1fr 1fr; }
+  .mosaic-large { grid-column: span 2; grid-row: span 1; min-height: 300px; }
+  .hero-content { padding: 0 2rem; }
+}
+@media (max-width: 600px) {
+  .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .gallery-mosaic { grid-template-columns: 1fr; }
+  .mosaic-large { grid-column: span 1; }
+  .event-meta { flex-direction: column; gap: 0.5rem; }
+}
+</style>

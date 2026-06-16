@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const albums = [
+  {
+    id: "spring-show-2025",
+    title: "Spring Show 2025",
+    date: "September 2025",
+    year: 2025,
+    cover: "/gallery/spring-show-2025/01.jpg",
+    images: [
+      { src: "/gallery/spring-show-2025/01.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/02.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/03.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/04.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/05.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/06.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/07.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/08.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/09.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/10.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/11.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/12.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/13.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/14.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/15.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/16.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/17.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/18.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/19.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/20.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/21.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/22.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/23.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/24.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/25.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/26.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/27.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/28.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/29.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/30.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/31.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/32.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/33.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/34.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/35.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/36.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/37.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/38.jpg", caption: "Spring Show 2025" },
+      { src: "/gallery/spring-show-2025/39.jpg", caption: "Spring Show 2025" },
+    ]
+  },
+  {
+    id: "rose-show-2025",
+    title: "Rose Show 2025",
+    date: "November 2025",
+    year: 2025,
+    cover: "https://images.unsplash.com/photo-1490750967868-88df5691cc3f?w=800&q=80",
+    images: [
+      { src: "https://images.unsplash.com/photo-1490750967868-88df5691cc3f?w=1200&q=80", caption: "Rose Show 2025" },
+      { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80", caption: "Members' roses" },
+    ]
+  },
+  {
+    id: "jubilee-2023",
+    title: "70th Jubilee Lunch",
+    date: "2023",
+    year: 2023,
+    cover: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80",
+    images: [
+      { src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80", caption: "70th Jubilee celebrations" },
+      { src: "https://images.unsplash.com/photo-1487530811015-780fcd2d9f5e?w=1200&q=80", caption: "Club members gather" },
+    ]
+  },
+  {
+    id: "spring-show-2024",
+    title: "Spring Show 2024",
+    date: "September 2024",
+    year: 2024,
+    cover: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    images: [
+      { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80", caption: "Spring Show 2024" },
+      { src: "https://images.unsplash.com/photo-1490750967868-88df5691cc3f?w=1200&q=80", caption: "Show entries" },
+    ]
+  },
+  {
+    id: "bush-walk-2024",
+    title: "Native Bush Walk",
+    date: "August 2024",
+    year: 2024,
+    cover: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80",
+    images: [
+      { src: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80", caption: "Native bush walk" },
+    ]
+  },
+  {
+    id: "members-gardens-2023",
+    title: "Members' Gardens",
+    date: "Summer 2023",
+    year: 2023,
+    cover: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80",
+    images: [
+      { src: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80", caption: "Members' gardens" },
+      { src: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80", caption: "Garden visit" },
+    ]
+  }
+];
+
+const years = [...new Set(albums.map(a => a.year))].sort((a, b) => b - a);
+---
+<BaseLayout title="Gallery" description="Photos from Torbay Garden Club events, shows, and members' gardens.">
+
+  <div style="height: 64px;"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Through the Seasons</span>
+      <h1 class="heading-display">Our <em>Gallery</em></h1>
+      <p class="page-intro">A growing collection of moments from our shows, meetings, and members' gardens.</p>
+    </div>
+  </section>
+
+  <section class="gallery-full">
+    <div class="container">
+
+      <!-- Year filter bar -->
+      <div class="year-filter">
+        <button class="year-btn active" data-year="all">All Years</button>
+        {years.map(year => (
+          <button class="year-btn" data-year={year}>{year}</button>
+        ))}
+      </div>
+
+      <!-- Album grid -->
+      <div class="albums-grid" id="albumGrid">
+        {albums.map(album => (
+          <div class="album-card" data-year={album.year} data-album={album.id}>
+            <div class="album-cover">
+              <img src={album.cover} alt={album.title} loading="lazy" />
+              <div class="album-overlay">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              </div>
+            </div>
+            <div class="album-info">
+              <h3>{album.title}</h3>
+              <span class="album-date">{album.date}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="lightbox-next" id="lightboxNext" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightboxImg" />
+        <div class="lightbox-meta">
+          <p class="lightbox-title" id="lightboxTitle"></p>
+          <p class="lightbox-caption" id="lightboxCaption"></p>
+          <p class="lightbox-counter" id="lightboxCounter"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<script define:vars={{ albums }}>
+  // Year filter
+  const yearBtns = document.querySelectorAll('.year-btn');
+  const albumCards = document.querySelectorAll('.album-card');
+
+  yearBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      yearBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const year = btn.dataset.year;
+      albumCards.forEach(card => {
+        if (year === 'all' || card.dataset.year === year) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxTitle = document.getElementById('lightboxTitle');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxCounter = document.getElementById('lightboxCounter');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+  let currentAlbum = null;
+  let currentIndex = 0;
+
+  function openLightbox(albumId, index = 0) {
+    currentAlbum = albums.find(a => a.id === albumId);
+    currentIndex = index;
+    showImage();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function showImage() {
+    const img = currentAlbum.images[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.caption;
+    lightboxTitle.textContent = currentAlbum.title;
+    lightboxCaption.textContent = img.caption;
+    lightboxCounter.textContent = `${currentIndex + 1} / ${currentAlbum.images.length}`;
+    lightboxPrev.style.display = currentIndex === 0 ? 'none' : 'flex';
+    lightboxNext.style.display = currentIndex === currentAlbum.images.length - 1 ? 'none' : 'flex';
+  }
+
+  albumCards.forEach(card => {
+    card.addEventListener('click', () => {
+      openLightbox(card.dataset.album, 0);
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxBackdrop.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => { currentIndex--; showImage(); });
+  lightboxNext.addEventListener('click', () => { currentIndex++; showImage(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; showImage(); }
+    if (e.key === 'ArrowRight' && currentIndex < currentAlbum.images.length - 1) { currentIndex++; showImage(); }
+  });
+</script>
+
+<style>
+.page-hero { padding: 4rem 0 0.5rem; }
+.page-intro { max-width: 520px; color: var(--text-muted); margin-top: 1rem; font-size: 0.95rem; }
+.gallery-full { padding: 1.5rem 2rem 5rem; }
+
+/* Year filter */
+.year-filter {
+  display: flex;
+  gap: 0;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0;
+}
+.year-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.year-btn:hover { color: var(--charcoal); }
+.year-btn.active { color: var(--crimson); border-bottom-color: var(--crimson); }
+
+/* Album grid */
+.albums-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.album-card { cursor: pointer; }
+.album-cover { position: relative; overflow: hidden; aspect-ratio: 4/3; }
+.album-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.album-card:hover .album-cover img { transform: scale(1.05); }
+.album-overlay { position: absolute; inset: 0; background: rgba(30,30,30,0.4); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; }
+.album-card:hover .album-overlay { opacity: 1; }
+.album-info { padding: 0.75rem 0; }
+.album-info h3 { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; margin-bottom: 0.2rem; }
+.album-date { font-size: 0.8rem; color: var(--text-light); }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lightbox-backdrop { position: absolute; inset: 0; background: rgba(10,10,10,0.92); }
+.lightbox-inner { position: relative; z-index: 1; width: 100%; max-width: 1000px; padding: 2rem; display: flex; align-items: center; justify-content: center; }
+.lightbox-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 100%; }
+.lightbox-content img { max-height: 75vh; max-width: 100%; object-fit: contain; }
+.lightbox-meta { text-align: center; color: var(--white); }
+.lightbox-title { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 0.25rem; }
+.lightbox-caption { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 0.25rem; }
+.lightbox-counter { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+.lightbox-close {
+  position: absolute; top: 0; right: 1rem;
+  background: none; border: none; color: var(--white);
+  cursor: pointer; padding: 0.5rem; opacity: 0.7; transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+.lightbox-prev, .lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: var(--white); cursor: pointer; padding: 0.75rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s; backdrop-filter: blur(4px);
+}
+.lightbox-prev { left: 0; }
+.lightbox-next { right: 0; }
+.lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.2); }
+
+@media (max-width: 900px) { .albums-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .albums-grid { grid-template-columns: 1fr; } }
+</style>

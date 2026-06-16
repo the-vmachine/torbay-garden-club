@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Contact" description="Get in touch with the Torbay Garden Club.">
+
+  <div style="height: 64px;"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h1 class="heading-display">Contact <em>Us</em></h1>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <div class="contact-details">
+        <h2>We'd love to hear from you</h2>
+        <p>Whether you're interested in joining, visiting a meeting, or just want to learn more about the club, feel free to get in touch.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Meeting Venue</p>
+              <p>Torbay Community Hall<br/>35 Watea Road, Torbay<br/>Auckland 0630</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.81 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Phone</p>
+              <p>(020) 4198 3906</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:torbaygardenclub@gmail.com" style="color: var(--crimson); font-size: 0.9rem;">torbaygardenclub@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+            <div>
+              <p class="contact-label">Meetings</p>
+              <p>First Wednesday of the month<br/>(except January, February &amp; July)<br/>1:00pm — Visitors welcome, free entry</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <div class="contact-form-card">
+          <h3>Send us a message</h3>
+          <p class="form-subhead">Your message will be sent to our secretary.</p>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="I'd love to visit a meeting..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary submit-btn">Send Message</button>
+          </form>
+          <p class="form-note">To activate this form, sign up free at <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> and replace <code>YOUR_FORM_ID</code> in the page source.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 4rem 0 2rem; }
+.contact-section { padding: var(--section-pad); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.contact-details h2 { font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.75rem; }
+.contact-details > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; }
+.contact-items { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon { width: 40px; height: 40px; background: var(--cream-dark); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--crimson); }
+.contact-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--olive); margin-bottom: 0.25rem; }
+.contact-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+.contact-form-card { background: var(--white); border: 1px solid var(--border); padding: 2rem; }
+.contact-form-card h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.form-subhead { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: var(--charcoal); }
+.form-group input,
+.form-group textarea {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: var(--crimson); }
+.submit-btn { width: 100%; text-align: center; display: block; }
+.form-note { font-size: 0.78rem; color: var(--text-light); margin-top: 1rem; line-height: 1.5; }
+.form-note a { color: var(--crimson); }
+.form-note code { background: var(--cream-dark); padding: 0.1rem 0.3rem; font-size: 0.75rem; }
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>

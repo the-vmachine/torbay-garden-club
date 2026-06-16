@@ -1,0 +1,225 @@
+---
+import '../styles/global.css';
+const { title = 'Torbay Garden Club', description = 'A community of gardeners in Torbay, Auckland, cultivating knowledge, friendship, and beautiful gardens since 1953.' } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title === 'Torbay Garden Club' ? title : `${title} | Torbay Garden Club`}</title>
+<link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-nav">
+    <div class="nav-inner container">
+      <a href="/" class="nav-brand">
+        <img src="/logo.png" alt="Torbay Garden Club logo" width="48" height="48" />
+        <span class="nav-brand-text">
+          <span class="brand-top">Torbay</span>
+          <span class="brand-bottom">GARDEN CLUB</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="/" class:list={['nav-link', { active: pathname === '/' }]}>Home</a>
+        <a href="/about" class:list={['nav-link', { active: pathname.startsWith('/about') }]}>About</a>
+        <a href="/events" class:list={['nav-link', { active: pathname.startsWith('/events') }]}>Events</a>
+        <a href="/gallery" class:list={['nav-link', { active: pathname.startsWith('/gallery') }]}>Gallery</a>
+        <a href="/contact" class:list={['nav-link', { active: pathname.startsWith('/contact') }]}>Contact</a>
+        <a href="/join" class="btn-primary nav-cta">Join Us</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/events">Events</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/contact">Contact</a>
+      <a href="/join" class="btn-primary">Join Us</a>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="/logo.png" alt="Torbay Garden Club" width="44" height="44" />
+          <span class="footer-name">Torbay Garden Club</span>
+        </div>
+        <p>Cultivating community since 1953. Where the forest meets the Hauraki Gulf, we grow together.</p>
+        <div class="footer-divider"></div>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-heading">NAVIGATE</p>
+        <a href="/about">About the Club</a>
+        <a href="/events">Events &amp; Shows</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/join">Become a Member</a>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-heading">FIND US</p>
+        <p class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-8-7.5-8-12a8 8 0 1 1 16 0c0 4.5-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          Torbay Community Hall<br/>35 Watea Road, Torbay<br/>Auckland 0630
+        </p>
+        <p class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.81 19a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 3.09 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (020) 4198 3906
+        </p>
+        <p class="footer-contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          torbaygardenclub@gmail.com
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; {new Date().getFullYear()} Torbay Garden Club. All rights reserved.</p>
+      <p>Est. 1953 — Torbay, Auckland, New Zealand</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+  const nav = document.querySelector('.site-nav');
+
+  toggle?.addEventListener('click', () => {
+    mobile?.classList.toggle('open');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+  });
+</script>
+
+<style>
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: transparent;
+  border-bottom: none;
+  transition: background 0.3s, border-color 0.3s;
+}
+.site-nav.scrolled {
+  background: rgba(242, 237, 228, 0.97);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-brand { display: flex; align-items: center; gap: 0.6rem; }
+.nav-brand img { width: 44px; height: 44px; object-fit: contain; }
+.nav-brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-top { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: var(--charcoal); }
+.brand-bottom { font-family: var(--font-sans); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; color: var(--olive); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--crimson);
+  transition: width 0.2s;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--crimson); }
+.nav-cta { font-size: 0.85rem; padding: 0.6rem 1.2rem; }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--charcoal); }
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  padding: 1rem 2rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a { padding: 0.75rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+.nav-mobile .btn-primary { margin-top: 1rem; text-align: center; border-bottom: none; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+.site-footer {
+  background: var(--cream-dark);
+  border-top: 1px solid var(--border);
+  padding: 4rem 0 0;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+.footer-logo-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+.footer-logo-row img { width: 40px; height: 40px; object-fit: contain; }
+.footer-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; }
+.footer-brand p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; max-width: 280px; }
+.footer-divider { width: 2px; height: 60px; background: var(--border); margin-top: 1.5rem; }
+.footer-heading { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: var(--olive); margin-bottom: 1.2rem; }
+.footer-nav { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-nav a { font-size: 0.9rem; color: var(--text-muted); transition: color 0.15s; }
+.footer-nav a:hover { color: var(--crimson); }
+.footer-contact { display: flex; flex-direction: column; gap: 0.8rem; }
+.footer-contact-item { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+.footer-contact-item svg { flex-shrink: 0; margin-top: 2px; }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) {
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+}
+</style>

@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Join Us" description="Become a member of the Torbay Garden Club. Individual $30, couples $35 per year.">
+
+  <div style="height: 64px;"></div>
+
+  <section class="join-hero">
+    <div class="join-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80')"></div>
+    <div class="join-hero-overlay"></div>
+    <div class="join-hero-content container">
+      <div class="membership-divider"></div>
+      <span class="eyebrow join-eyebrow">Membership</span>
+      <h1 class="heading-display join-heading">
+        Plant Your Roots<br/>
+        <em>in the Community</em>
+      </h1>
+      <p>Join a fellowship of gardeners who have been cultivating knowledge, friendship, and beautiful gardens in Torbay for over 70 years.</p>
+    </div>
+  </section>
+
+  <section class="join-content">
+    <div class="container join-grid">
+
+      <div class="join-details">
+        <h2>Membership Fees</h2>
+        <div class="fee-cards">
+          <div class="fee-card">
+            <span class="fee-type">Individual</span>
+            <span class="fee-price">$30</span>
+            <span class="fee-period">per year</span>
+          </div>
+          <div class="fee-card fee-card-featured">
+            <span class="fee-type">Couple</span>
+            <span class="fee-price">$35</span>
+            <span class="fee-period">per year</span>
+          </div>
+        </div>
+
+        <h2>What's Included</h2>
+        <ul class="benefits-list">
+          <li>Attend all monthly meetings and club shows</li>
+          <li>Enter exhibits in club shows and competitions</li>
+          <li>Access to the club library</li>
+          <li>Trading table — buy and sell plants</li>
+          <li>Morning tea at every meeting</li>
+          <li>Guest speaker presentations</li>
+          <li>Social events and garden visits</li>
+          <li>Club newsletter</li>
+        </ul>
+
+        <h2>How to Join</h2>
+        <p>Simply come along to one of our monthly meetings as a visitor (free entry, no commitment) and introduce yourself. Our membership secretary will be happy to sign you up on the day.</p>
+        <p>You can also contact us in advance via the details below.</p>
+        <a href="/contact" class="link-arrow" style="margin-top: 0.5rem; display: inline-flex;">Get in touch →</a>
+      </div>
+
+      <div class="join-form-wrap">
+        <div class="join-form-card">
+          <h3>Register your interest</h3>
+          <p class="form-subhead">Fill in your details and we'll be in touch before the next meeting.</p>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="join-form">
+            <div class="form-group">
+              <label for="fullname">Full name</label>
+              <input type="text" id="fullname" name="name" required placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label for="joinemail">Email address</label>
+              <input type="email" id="joinemail" name="email" required placeholder="jane@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="021 000 0000" />
+            </div>
+            <div class="form-group">
+              <label for="type">Membership type</label>
+              <select id="type" name="membership_type">
+                <option value="individual">Individual — $30/year</option>
+                <option value="couple">Couple — $35/year</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="joinmessage">Anything you'd like to tell us? (optional)</label>
+              <textarea id="joinmessage" name="message" rows="3" placeholder="I'm interested in roses..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary submit-btn">Register Interest</button>
+          </form>
+          <p class="form-note">To activate this form, sign up free at <a href="https://formspree.io" target="_blank" rel="noopener">formspree.io</a> and replace <code>YOUR_FORM_ID</code> in the page source.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.join-hero { position: relative; padding: 8rem 0 5rem; text-align: center; overflow: hidden; }
+.join-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.9) saturate(0.8); }
+.join-hero-overlay { position: absolute; inset: 0; background: rgba(242,237,228,0.82); }
+.join-hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 600px; margin: 0 auto; }
+.membership-divider { width: 1px; height: 60px; background: var(--border); }
+.join-eyebrow { color: var(--olive); }
+.join-heading { text-align: center; }
+.join-hero-content p { color: var(--text-muted); font-size: 0.95rem; text-align: center; max-width: 480px; }
+.join-content { padding: var(--section-pad); }
+.join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.join-details h2 { font-family: var(--font-serif); font-size: 1.3rem; margin: 2rem 0 1rem; }
+.join-details h2:first-child { margin-top: 0; }
+.join-details p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.fee-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.fee-card { border: 1px solid var(--border); padding: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.2rem; }
+.fee-card-featured { border-color: var(--crimson); background: #fce8ed; }
+.fee-type { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--olive); }
+.fee-price { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 700; color: var(--crimson); line-height: 1; }
+.fee-period { font-size: 0.78rem; color: var(--text-muted); }
+.benefits-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem; }
+.benefits-list li { font-size: 0.9rem; color: var(--text-muted); padding-left: 1.2rem; position: relative; }
+.benefits-list li::before { content: '→'; position: absolute; left: 0; color: var(--crimson); font-size: 0.8rem; }
+.join-form-card { background: var(--white); border: 1px solid var(--border); padding: 2rem; }
+.join-form-card h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 0.5rem; }
+.form-subhead { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.join-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; color: var(--charcoal); }
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: var(--crimson); }
+.submit-btn { width: 100%; text-align: center; display: block; }
+.form-note { font-size: 0.78rem; color: var(--text-light); margin-top: 1rem; line-height: 1.5; }
+.form-note a { color: var(--crimson); }
+.form-note code { background: var(--cream-dark); padding: 0.1rem 0.3rem; font-size: 0.75rem; }
+@media (max-width: 768px) { .join-grid { grid-template-columns: 1fr; } }
+</style>

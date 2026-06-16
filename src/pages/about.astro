@@ -1,63 +1,196 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout title="About" description="Learn about the Torbay Garden Club, established in 1953 in Auckland, New Zealand.">
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+  <div style="height: 64px;"></div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+  <section class="about-hero">
+    <div class="container">
+      <span class="eyebrow">Our Story</span>
+      <h1 class="heading-display">Rooted in <em>Community</em></h1>
+    </div>
+  </section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+  <section class="history-section">
+    <div class="container history-grid">
+      <div class="history-timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1953</div>
+          <h3>The Beginning</h3>
+          <p>The Torbay Garden Club was established as the Torbay Garden Circle under the auspices of the NZ National Party to cater for the many keen gardeners in the area. It began with just 12 members.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1966</div>
+          <h3>Independence</h3>
+          <p>The Circle seceded from the National Party, becoming an independent community organisation dedicated purely to the love of gardening.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1973</div>
+          <h3>Finding a Home</h3>
+          <p>The Torbay Community Hall was opened, and the Garden Club found its permanent meeting place at 35 Watea Road — where we have met ever since.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">1979</div>
+          <h3>A New Name</h3>
+          <p>The club was renamed the Torbay Garden Club, having outgrown the title of Circle. Membership had grown significantly from those original 12 founders.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2023</div>
+          <h3>70th Jubilee</h3>
+          <p>The club celebrated its 70th anniversary with a special jubilee lunch, marking seven decades of community, friendship, and beautiful gardens in Torbay.</p>
+        </div>
+        <div class="timeline-item timeline-item-today">
+          <div class="timeline-dot dot-today"></div>
+          <div class="timeline-year year-today">Today</div>
+          <h3>Still Growing</h3>
+          <p>With around 70 active members, the club continues to thrive. Monthly meetings feature guest speakers, trading tables, raffles, and the much-loved club shows. The annual Spring Show and Rose Show remain highlights of the calendar.</p>
+        </div>
+      </div>
+      <div class="history-image-wrap">
+        <div class="history-image-sticky">
+          <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&q=80" alt="Native flora — Coastal NZ" />
+          <div class="image-caption">
+            <span>Native Flora</span>
+            <span>Pohutukawa — Coastal NZ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+  <section class="what-we-do">
+    <div class="container">
+      <span class="eyebrow">What We Do</span>
+      <h2 class="heading-display">The Rhythm of <em>Our Year</em></h2>
+      <div class="activity-grid">
+        <div class="activity-card">
+          <h3>Monthly Meetings</h3>
+          <p>First Wednesday of each month at 1pm. Guest speakers, demonstrations, and the club show where members exhibit their finest blooms.</p>
+        </div>
+        <div class="activity-card">
+          <h3>Spring Show</h3>
+          <p>Our annual highlight in September — open to the public. Competition covers spring bulbs, flowers, foliage, fruit, vegetables, and floral art.</p>
+        </div>
+        <div class="activity-card">
+          <h3>Rose Show</h3>
+          <p>Every November, members fill the hall with their most beautiful roses. The perfume alone is worth the visit.</p>
+        </div>
+        <div class="activity-card">
+          <h3>Garden Trips</h3>
+          <p>Coach trips are organised throughout the year to enjoy other gardens, both in Auckland and further afield.</p>
+        </div>
+        <div class="activity-card">
+          <h3>Trading Table</h3>
+          <p>A beloved tradition since the beginning — pick up bargain plants, homemade jams, and gardening books.</p>
+        </div>
+        <div class="activity-card">
+          <h3>Social Events</h3>
+          <p>From the February picnic at Long Bay to the July birthday lunch and December Christmas celebration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+</BaseLayout>
+
+<style>
+.about-hero { padding: 4rem 0 3rem; }
+.about-hero .heading-display { max-width: 700px; white-space: nowrap; }
+.history-section { padding: var(--section-pad); overflow: visible; }
+.history-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+}
+.history-timeline { display: flex; flex-direction: column; gap: 0; }
+.timeline-item {
+  position: relative;
+  padding: 0 0 3rem 2rem;
+  border-left: 1px solid var(--border);
+}
+.timeline-item:last-child { border-left: 1px solid transparent; }
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--crimson);
+}
+.dot-today {
+  width: 11px;
+  height: 11px;
+  left: -6px;
+  background: var(--crimson);
+  box-shadow: 0 0 0 3px rgba(155,28,58,0.2);
+}
+.timeline-year {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--crimson);
+  margin-bottom: 0.3rem;
+  font-family: var(--font-sans);
+}
+.year-today { color: var(--crimson); }
+.timeline-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+.timeline-item p { font-size: 1rem; color: var(--text-muted); line-height: 1.7; }
+
+.history-image-wrap { position: sticky; top: 100px; align-self: start; height: fit-content; }
+.history-image-sticky { height: fit-content; }
+.history-image-sticky img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+.image-caption {
+  background: rgba(30,30,30,0.75);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.what-we-do { padding: var(--section-pad); background: var(--cream-dark); }
+.what-we-do .heading-display { margin-bottom: 3rem; }
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.activity-card {
+  background: var(--cream-medium);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+.activity-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--charcoal);
+}
+.activity-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .history-grid { grid-template-columns: 1fr; }
+  .history-image-wrap { display: none; }
+  .activity-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .activity-grid { grid-template-columns: 1fr; }
+}
+</style>
