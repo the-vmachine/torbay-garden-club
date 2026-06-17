@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Exhibiting" description="Tips and guidance for exhibiting at Torbay Garden Club shows.">
+
+  <div style="height: 64px;"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Members</span>
+      <h1 class="heading-display">Exhibiting <em>Tips &amp; Tricks</em></h1>
+      <p class="page-intro">Everything you need to know to get the best from your exhibits at our monthly shows.</p>
+    </div>
+  </section>
+
+  <section class="exhibiting-content">
+    <div class="container exhibiting-grid">
+
+      <div class="exhibiting-main">
+
+        <div class="tip-section">
+          <h2>When to Pick</h2>
+          <ul class="tip-list">
+            <li>If the forecast is for stormy weather, hail or heavy rain, cut your flowers just before the bad weather hits and bring them inside. Most flowers are fine to pick a little early.</li>
+            <li>Cut flowers early in the morning or late in the afternoon. Avoid cutting them in the heat of the day as they'll wilt and not be looking their best.</li>
+            <li>As soon as they are gathered, place the stems in a deep container of cool water and set it in a cool, shady place for at least three hours, or overnight. Daffodils are best kept in their own container as their sap can affect other flowers.</li>
+            <li>When you've cut all your daffodils, put them in a bucket of water and re-cut their stems. They will take a big drink of water immediately when the stem is cut, helping prevent wilting prematurely.</li>
+          </ul>
+        </div>
+
+        <div class="tip-section">
+          <h2>What to Pick</h2>
+          <ul class="tip-list">
+            <li>Choose your best flowers in the freshest condition with even petals, and try to find ones without insect holes.</li>
+            <li>Cut a long stem if possible — it's easy to trim the stem to a better length for the vase, but you can't add length back if you cut too short.</li>
+            <li>When displaying daffodils, cutting a single leaf to display in the vase can help with the presentation of your flower.</li>
+          </ul>
+        </div>
+
+        <div class="tip-section">
+          <h2>Preparing the Night Before</h2>
+          <ul class="tip-list">
+            <li>Review the schedule ahead of time, checking the requirements for each class. It's very easy to accidentally have four flower stems for an entry when the class states no more than three.</li>
+            <li>Check your exhibits for dirt, water spots and unwanted guests. Clean leaves with a damp soft cloth and clean flowers gently with a damp cotton bud or soft paintbrush to remove mud spots and pollen.</li>
+            <li>Organise which flowers you will be putting into each class the night before. This can include arranging jars, vases or buckets to transport your flowers to the show.</li>
+            <li>Double-check what time staging of exhibits starts and finishes.</li>
+          </ul>
+        </div>
+
+        <div class="tip-section">
+          <h2>On the Day</h2>
+          <ul class="tip-list">
+            <li>Get to the hall in good time to give yourself enough time to stage your exhibits.</li>
+            <li>Carefully transport your flowers to the show. Secure any filled vases and ensure flowers are not rubbing against each other or the car. This reduces the risk of bruising or damage.</li>
+            <li>Exhibits must be placed in club vases that are provided at the show.</li>
+            <li>There is a staging table in the foyer where you can put your entries into the vases. Grab a bunch of vases to set yourself up. There are also little watering cans on the table to fill them with water.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="exhibiting-sidebar">
+        <div class="sidebar-card">
+          <h3>Kids' Exhibits</h3>
+          <h4>Jar of Flowers</h4>
+          <p>Nothing can be easier or more pretty than a jar of flowers.</p>
+          <ol class="kids-list">
+            <li>Look in your garden for up to 12 different kinds of flowers. Make sure the petals are clean and aren't damaged or bruised.</li>
+            <li>Pick the flowers with a nice long stem so they can go in the jar.</li>
+            <li>Grab a jar and fill it with water.</li>
+            <li>Arrange your flowers in the vase so that every flower is shown off and looks its best!</li>
+          </ol>
+        </div>
+
+        <div class="sidebar-card sidebar-card-tip">
+          <h3>Good to Know</h3>
+          <p>There are no fees for entering exhibits in any of our shows.</p>
+          <p>Winners receive cash prizes as per the show schedule.</p>
+          <p>The show schedule is available at monthly meetings or by emailing us.</p>
+          <a href="/contact" class="link-arrow" style="margin-top: 0.5rem; display: inline-flex;">Contact us →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 4rem 0 0.5rem; }
+.page-intro { max-width: 560px; color: var(--text-muted); margin-top: 1rem; font-size: 0.95rem; }
+.exhibiting-content { padding: 1.5rem 2rem 5rem; }
+.exhibiting-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.tip-section { margin-bottom: 3rem; }
+.tip-section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.tip-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+.tip-list li {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.tip-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--crimson);
+  font-size: 0.85rem;
+}
+.exhibiting-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 1.5rem; }
+.sidebar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+}
+.sidebar-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--charcoal);
+}
+.sidebar-card h4 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+.sidebar-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; line-height: 1.6; }
+.sidebar-card-tip { background: #fce8ed; border-color: var(--crimson); }
+.kids-list {
+  list-style: none;
+  counter-reset: kids-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.kids-list li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  padding-left: 1.75rem;
+  position: relative;
+  counter-increment: kids-counter;
+}
+.kids-list li::before {
+  content: counter(kids-counter) '.';
+  position: absolute;
+  left: 0;
+  color: var(--crimson);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+@media (max-width: 900px) {
+  .exhibiting-grid { grid-template-columns: 1fr; }
+  .exhibiting-sidebar { position: static; }
+}
+</style>

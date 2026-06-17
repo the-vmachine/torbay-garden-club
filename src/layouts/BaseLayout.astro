@@ -27,27 +27,42 @@ const pathname = Astro.url.pathname;
           <span class="brand-bottom">GARDEN CLUB</span>
         </span>
       </a>
-      <nav class="nav-links">
+<nav class="nav-links">
         <a href="/" class:list={['nav-link', { active: pathname === '/' }]}>Home</a>
         <a href="/about" class:list={['nav-link', { active: pathname.startsWith('/about') }]}>About</a>
         <a href="/events" class:list={['nav-link', { active: pathname.startsWith('/events') }]}>Events</a>
         <a href="/gallery" class:list={['nav-link', { active: pathname.startsWith('/gallery') }]}>Gallery</a>
+        <div class="nav-dropdown">
+          <button class:list={['nav-link', 'nav-dropdown-toggle', { active: pathname.startsWith('/exhibiting') || pathname.startsWith('/trips') }]}>
+            Members
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/exhibiting" class:list={['nav-dropdown-item', { active: pathname.startsWith('/exhibiting') }]}>Exhibiting</a>
+            <a href="/trips" class:list={['nav-dropdown-item', { active: pathname.startsWith('/trips') }]}>Garden Trips</a>
+          </div>
+        </div>
+        <a href="/sponsors" class:list={['nav-link', { active: pathname.startsWith('/sponsors') }]}>Sponsors</a>
         <a href="/contact" class:list={['nav-link', { active: pathname.startsWith('/contact') }]}>Contact</a>
         <a href="/join" class="btn-primary nav-cta">Join Us</a>
       </nav>
-      <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+            <button class="nav-toggle" aria-label="Open menu" id="navToggle">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="nav-mobile" id="navMobile">
+<div class="nav-mobile" id="navMobile">
       <a href="/">Home</a>
       <a href="/about">About</a>
       <a href="/events">Events</a>
       <a href="/gallery">Gallery</a>
+      <p class="mobile-section-label">Members</p>
+      <a href="/exhibiting" class="mobile-sub">Exhibiting</a>
+      <a href="/trips" class="mobile-sub">Garden Trips</a>
+      <a href="/sponsors">Sponsors</a>
       <a href="/contact">Contact</a>
       <a href="/join" class="btn-primary">Join Us</a>
     </div>
-  </header>
+    </header>
 
   <main>
     <slot />
@@ -221,5 +236,79 @@ const pathname = Astro.url.pathname;
 @media (max-width: 600px) {
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+}
+
+/* Dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  padding: 0;
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--crimson);
+  transition: width 0.2s;
+}
+.nav-dropdown:hover .nav-dropdown-toggle::after,
+.nav-dropdown-toggle.active::after { width: 100%; }
+.nav-dropdown-toggle.active { color: var(--crimson); }
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: 12px;
+  background: transparent;
+  min-width: 160px;
+  display: none;
+  flex-direction: column;
+  z-index: 200;
+}
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: 12px; left: 0; right: 0; bottom: 0;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  z-index: -1;
+}
+.nav-dropdown:hover .nav-dropdown-menu { display: flex; }
+.nav-dropdown-item {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  transition: color 0.15s, background 0.15s;
+}
+.nav-dropdown-item:last-child { border-bottom: none; }
+.nav-dropdown-item:hover { color: var(--crimson); background: var(--cream-dark); }
+.nav-dropdown-item.active { color: var(--crimson); }
+
+/* Mobile sub-items */
+.mobile-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive);
+  padding: 0.75rem 0 0.25rem;
+  border-bottom: none;
+}
+.mobile-sub {
+  padding-left: 1rem !important;
+  font-size: 0.88rem !important;
 }
 </style>

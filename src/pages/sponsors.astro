@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sponsors = [
+  {
+    name: "Mitre 10 Mega Albany",
+    description: "Mitre 10 Mega Albany provides regular sponsored plants as prizes for the TGC monthly raffle.",
+    logo: "/sponsors/mitre10.png",
+    tier: "principal"
+  },
+  {
+    name: "Bunnings Constellation Drive",
+    description: "Bunnings Constellation Drive is a generous sponsor for the 2025 Spring Show, providing prizes for the Children's Section.",
+    logo: "/sponsors/bunnings.png",
+    tier: "principal"
+  },
+  {
+    name: "Barfoot & Thompson — Wendy Radcliffe",
+    description: "Wendy Radcliffe and Barfoot & Thompson are proud supporters of the 2025 Spring Show.",
+    logo: "/sponsors/barfoot.png",
+    tier: "supporting"
+  },
+  {
+    name: "Torbay Village Butchery",
+    description: "Torbay Village Butchery continues to be a generous sponsor for the 2025 Spring Show.",
+    logo: "/sponsors/torbay-butchery.png",
+    tier: "supporting"
+  },
+  {
+    name: "New World Long Bay",
+    description: "New World Long Bay continues to be a generous sponsor for the 2025 Spring Show.",
+    logo: "/sponsors/new-world.png",
+    tier: "supporting"
+  },
+  {
+    name: "Countdown Browns Bay",
+    description: "Countdown Browns Bay continues to be a generous sponsor for the 2025 Spring Show.",
+    logo: "/sponsors/countdown.png",
+    tier: "supporting"
+  },
+  {
+    name: "Kings Plant Barn Takapuna",
+    description: "Kings Plant Barn Takapuna is a generous sponsor for the TGC Spring Show 2025.",
+    logo: "/sponsors/kings-plant-barn.png",
+    tier: "supporting"
+  },
+  {
+    name: "Flavells Floral Boutique",
+    description: "Flavells Florist Browns Bay is a generous sponsor for the 2024 Spring Show.",
+    logo: "/sponsors/flavells.png",
+    tier: "supporting"
+  },
+  {
+    name: "Unichem Torbay Pharmacy",
+    description: "Unichem Torbay is a sponsor for the 2025 Jubilee Spring Show.",
+    logo: "/sponsors/unichem.png",
+    tier: "supporting"
+  },
+  {
+    name: "Focus Magazine",
+    description: "Focus magazine is a generous sponsor for the 2025 Jubilee Spring Show.",
+    logo: "/sponsors/focus.png",
+    tier: "supporting"
+  },
+  {
+    name: "4 Square Torbay",
+    description: "4 Square Torbay is a generous sponsor for the 2025 Jubilee Spring Show.",
+    logo: "/sponsors/4square.png",
+    tier: "supporting"
+  },
+  {
+    name: "Central Landscape Supplies Albany",
+    description: "Central Landscape Supplies Albany is a Proud Supporter of the TGC Spring Show 2025.",
+    logo: "/sponsors/central-landscape.png",
+    tier: "supporting"
+  },
+  {
+    name: "Chemist Warehouse Browns Bay",
+    description: "Chemist Warehouse Browns Bay was a sponsor for the 2023 Jubilee Spring Show.",
+    logo: "/sponsors/chemist-warehouse.png",
+    tier: "past"
+  },
+  {
+    name: "Torbay Fruit Shop",
+    description: "Torbay Fruit Shop was a generous sponsor for the 2023 Jubilee Spring Show.",
+    logo: "/sponsors/torbay-fruit.png",
+    tier: "past"
+  }
+];
+
+const principal = sponsors.filter(s => s.tier === 'principal');
+const supporting = sponsors.filter(s => s.tier === 'supporting');
+const past = sponsors.filter(s => s.tier === 'past');
+---
+<BaseLayout title="Sponsors" description="Torbay Garden Club is proud to be supported by these local businesses.">
+
+  <div style="height: 64px;"></div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Our Community</span>
+      <h1 class="heading-display">Our <em>Sponsors</em></h1>
+      <p class="page-intro">Torbay Garden Club is proud to receive sponsorship from the following local businesses in and around Torbay. Their generosity makes our shows and events possible.</p>
+    </div>
+  </section>
+
+  <section class="sponsors-content">
+    <div class="container">
+
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <span class="eyebrow">Principal Sponsors</span>
+        </div>
+        <div class="sponsors-grid sponsors-grid-principal">
+          {principal.map(sponsor => (
+            <div class="sponsor-card sponsor-card-principal">
+              <div class="sponsor-logo-wrap">
+                <img src={sponsor.logo} alt={sponsor.name} />
+              </div>
+              <div class="sponsor-info">
+                <h3>{sponsor.name}</h3>
+                <p>{sponsor.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <span class="eyebrow">Supporting Sponsors</span>
+        </div>
+        <div class="sponsors-grid sponsors-grid-supporting">
+          {supporting.map(sponsor => (
+            <div class="sponsor-card">
+              <div class="sponsor-logo-wrap">
+                <img src={sponsor.logo} alt={sponsor.name} />
+              </div>
+              <div class="sponsor-info">
+                <h3>{sponsor.name}</h3>
+                <p>{sponsor.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="sponsors-tier">
+        <div class="tier-header">
+          <span class="eyebrow">Past Sponsors</span>
+        </div>
+        <div class="sponsors-grid sponsors-grid-supporting">
+          {past.map(sponsor => (
+            <div class="sponsor-card sponsor-card-past">
+              <div class="sponsor-logo-wrap">
+                <img src={sponsor.logo} alt={sponsor.name} />
+              </div>
+              <div class="sponsor-info">
+                <h3>{sponsor.name}</h3>
+                <p>{sponsor.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="sponsor-cta">
+        <div class="sponsor-cta-inner">
+          <span class="eyebrow">Get Involved</span>
+          <h2 class="heading-display">Become a <em>Sponsor</em></h2>
+          <p>Interested in supporting the Torbay Garden Club and reaching our community of passionate local gardeners? We'd love to hear from you.</p>
+          <a href="/contact" class="btn-primary">Get in Touch</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.page-hero { padding: 4rem 0 0.5rem; }
+.page-intro { max-width: 640px; color: var(--text-muted); margin-top: 1rem; font-size: 0.95rem; line-height: 1.7; }
+.sponsors-content { padding: 1.5rem 2rem 5rem; }
+
+.sponsors-tier { margin-bottom: 4rem; }
+.tier-header { margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+
+.sponsors-grid { display: grid; gap: 1.5rem; }
+.sponsors-grid-principal { grid-template-columns: repeat(2, 1fr); }
+.sponsors-grid-supporting { grid-template-columns: repeat(3, 1fr); }
+
+.sponsor-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.2s;
+}
+.sponsor-card:hover { border-color: var(--crimson); }
+.sponsor-card-principal { padding: 2.25rem; }
+.sponsor-card-past { opacity: 0.7; }
+
+.sponsor-logo-wrap {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sponsor-card-principal .sponsor-logo-wrap { height: 100px; }
+.sponsor-logo-wrap img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: grayscale(20%);
+  transition: filter 0.2s;
+}
+.sponsor-card:hover .sponsor-logo-wrap img { filter: grayscale(0%); }
+
+.sponsor-info h3 {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+.sponsor-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+.sponsor-cta {
+  background: var(--cream-dark);
+  border: 1px solid var(--border);
+  padding: 4rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.sponsor-cta-inner {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.sponsor-cta p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .sponsors-grid-principal { grid-template-columns: 1fr; }
+  .sponsors-grid-supporting { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .sponsors-grid-supporting { grid-template-columns: 1fr; }
+  .sponsor-cta { padding: 2rem; }
+}
+</style>
